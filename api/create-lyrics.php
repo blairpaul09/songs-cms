@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-include './Songs.php';
-include './Helpers.php';
+include __DIR__ . '/../models/Songs.php';
+include __DIR__ . '/../helpers/Helpers.php';
 
 $_SESSION['error_bag'] = [];
 $_SESSION['old_value'] = [];

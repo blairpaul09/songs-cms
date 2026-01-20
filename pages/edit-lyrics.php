@@ -1,14 +1,14 @@
 <?php
 session_start();
 $title = 'Create lyric';
-include './../Songs.php';
+include __DIR__ . '/../models/Songs.php';
 $song = (new Songs)->find($_GET['id']);
 ob_start();
 ?>
 
 <?php require_once '../components/error-bag.php'; ?>
 
-<form action="/exam-lyrics-cms/update-lyrics.php" method="post">
+<form action="/exam-lyrics-cms/api/update-lyrics.php" method="post">
     <input hidden type="text" name="id" value="<?= $song['id'] ?>">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Title</label>

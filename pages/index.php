@@ -1,6 +1,6 @@
 <?php
 $title = 'List';
-include './../Songs.php';
+include __DIR__ . '/../models/Songs.php';
 $songs = (new Songs)->list();
 ob_start();
 ?>
@@ -24,7 +24,7 @@ ob_start();
                 <td><?= $song['title'] ?></td>
                 <td>
                     <a href="/exam-lyrics-cms/pages/edit-lyrics.php?id=<?= $song['id'] ?>" class="btn btn-warning">Edit</a>
-                    <a href="/exam-lyrics-cms/delete-lyrics.php?id=<?= $song['id'] ?>" class="btn btn-danger">Delete</a>
+                    <a href="/exam-lyrics-cms/api/delete-lyrics.php?id=<?= $song['id'] ?>" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         <?php endforeach ?>

@@ -4,9 +4,9 @@ $title = 'Create lyric';
 ob_start();
 ?>
 
-<?php require_once '../components/error-bag.php'; ?>
+<?php require_once __DIR__ . '/../components/error-bag.php'; ?>
 
-<form action="/exam-lyrics-cms/create-lyrics.php" method="post">
+<form action="/exam-lyrics-cms/api/create-lyrics.php" method="post">
     <div class="mb-3">
         <label for="formGroupExampleInput" class="form-label">Title</label>
         <input type="text" name="title" value="<?= $_SESSION['old_value']['title'] ?? '' ?>" class="form-control" id="formGroupExampleInput" placeholder="Tile">
@@ -26,6 +26,6 @@ ob_start();
 <?php
 $body = ob_get_clean();
 
-include '../layout/base.php';
+include __DIR__ . '/../layout/base.php';
 
 session_destroy();

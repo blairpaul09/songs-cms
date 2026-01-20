@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/DB.php';
+include __DIR__ . '/../database/DB.php';
 
 class Songs
 {
@@ -8,7 +8,7 @@ class Songs
 
     public function __construct()
     {
-        $this->db = (new DB(['port' => 3307, 'database' => 'exam_lyrics_cms']))->connect();
+        $this->db = DB::connect();
     }
 
     public function list(): array
